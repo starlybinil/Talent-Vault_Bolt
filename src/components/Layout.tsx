@@ -42,7 +42,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-asu-darker relative">
       <AnnouncementBanner />
       <Navbar />
-      <main className="pt-[116px]">
+      <main className="pt-[94px] sm:pt-[112px]">
         {children}
       </main>
     </div>

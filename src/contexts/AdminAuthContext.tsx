@@ -67,7 +67,7 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
       const authUser = session?.user ?? null
       setUser(authUser)
 
-      if (event === 'SIGNED_OUT') {
+      if (event === 'SIGNED_OUT' || event === 'USER_DELETED') {
         setAdminUser(null)
         navigate('/admin/login')
       } else if (event === 'SIGNED_IN' && authUser) {
@@ -170,7 +170,7 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
         }
       } catch (error) {
         // Log failed login attempt
-        await logActivity('admin_login_failed', 'auth', undefined, {
+        await logActivity('admin_login_failed', 'auth', null, {
           email,
           error: error instanceof Error ? error.message : 'Unknown error'
         })

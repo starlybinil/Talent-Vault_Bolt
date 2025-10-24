@@ -28,10 +28,15 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 // Add error handling for storage operations
 export async function getStorageUrl(bucket: string, path: string): Promise<string> {
   try {
-    const { data } = supabase
+    const { data, error } = await supabase
       .storage
       .from(bucket)
       .getPublicUrl(path)
+    
+    if (error) {
+      console.error('Error getting storage URL:', error)
+      throw error
+    }
 
     if (!data?.publicUrl) {
       throw new Error('No public URL returned from storage')

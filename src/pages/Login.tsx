@@ -38,16 +38,16 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen bg-asu-darker flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 bg-asu-dark p-8 rounded-2xl border border-asu-maroon/30">
+    <div className="min-h-screen bg-asu-darker flex items-center justify-center py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-6 sm:space-y-8 bg-asu-dark p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-asu-maroon/30">
         <div>
           <div className="flex justify-center">
-            <CircuitBoard className="h-12 w-12 text-asu-gold" />
+            <CircuitBoard className="h-10 w-10 sm:h-12 sm:w-12 text-asu-gold" />
           </div>
-          <h2 className="mt-6 text-center text-3xl font-bold text-white">
+          <h2 className="mt-4 sm:mt-6 text-center text-2xl sm:text-3xl font-bold text-white">
             Welcome back
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-400">
+          <p className="mt-2 text-center text-xs sm:text-sm text-gray-400">
             Don't have an account?{' '}
             <Link to="/signup" className="text-asu-gold hover:text-asu-gold/80">
               Sign up here
@@ -55,7 +55,7 @@ export default function Login() {
           </p>
         </div>
 
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form className="mt-6 sm:mt-8 space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
           {message && (
             <div className="bg-green-500/10 border border-green-500/20 text-green-400 p-3 rounded-md text-sm">
               {message}
@@ -67,7 +67,7 @@ export default function Login() {
             </div>
           )}
           
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <div>
               <label htmlFor="email" className="form-label">
                 Email address
@@ -107,7 +107,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-asu-maroon text-white py-3 px-4 rounded-md hover:bg-asu-maroon/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-asu-maroon text-white py-3 sm:py-3.5 px-4 rounded-md hover:bg-asu-maroon/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-base sm:text-lg font-medium touch-manipulation"
             >
               {loading ? 'Signing in...' : 'Sign in'}
             </button>
