@@ -42,7 +42,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-asu-darker relative">
       <AnnouncementBanner />
       <Navbar />
-      <main className="pt-[94px] sm:pt-[112px]">
+      {/* Main content padding: mobile=128px (announcement 72px + navbar 56px), tablet=144px (80px + 64px), desktop=152px (88px + 64px) */}
+      <main className="pt-[128px] sm:pt-[144px] md:pt-[152px]">
         {children}
       </main>
     </div>

@@ -19,6 +19,8 @@ import ProfileSettings from './pages/ProfileSettings'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import FAQ from './pages/FAQ'
+import ForgotPassword from './pages/ForgotPassword'
+import ResetPassword from './pages/ResetPassword'
 import InformationRequest from './pages/InformationRequest'
 import AdminLogin from './pages/admin/AdminLogin'
 import AdminDashboard from './pages/admin/AdminDashboard'
@@ -154,6 +156,8 @@ function App() {
                     <Signup />
                   </AuthRoute>
                 } />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
                 <Route path="/dashboard" element={
                   <ProtectedRoute>
                     <DashboardRouter />

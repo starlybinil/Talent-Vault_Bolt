@@ -77,7 +77,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-asu-dark/90 backdrop-blur-md shadow-xl border-b border-asu-maroon/30 fixed top-[40px] sm:top-[48px] left-0 right-0 z-40">
+    <nav className="bg-asu-dark/90 backdrop-blur-md shadow-xl border-b border-asu-maroon/30 fixed top-[72px] sm:top-[80px] md:top-[88px] left-0 right-0 z-50">{/* Positioned below announcement banner: adjusts for responsive banner heights including padding */}
       <div className="container mx-auto px-3 sm:px-4">
         <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Left side: Logo */}
@@ -114,7 +114,7 @@ export default function Navbar() {
           </button>
 
           {/* Center: User actions */}
-          <div className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex absolute md:relative top-14 sm:top-16 md:top-0 left-0 right-0 md:items-center flex-col md:flex-row bg-asu-dark md:bg-transparent py-4 md:py-0 space-y-3 md:space-y-0 md:space-x-4 lg:space-x-6 px-4 md:px-0 border-b md:border-b-0 border-asu-maroon/30 z-30 max-h-[calc(100vh-8rem)] overflow-y-auto md:overflow-visible`}>
+          <div className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex absolute md:relative top-[128px] sm:top-[144px] md:top-0 left-0 right-0 md:items-center flex-col md:flex-row bg-asu-dark md:bg-transparent py-4 md:py-0 space-y-3 md:space-y-0 md:space-x-4 lg:space-x-6 px-4 md:px-0 border-b md:border-b-0 border-asu-maroon/30 z-30 max-h-[calc(100vh-8rem)] overflow-y-auto md:overflow-visible`}>
             {user ? (
               <>
                 <Link

@@ -49,8 +49,8 @@ export default function Login() {
           </h2>
           <p className="mt-2 text-center text-xs sm:text-sm text-gray-400">
             Don't have an account?{' '}
-            <Link to="/signup" className="text-asu-gold hover:text-asu-gold/80">
-              Sign up here
+            <Link to="/contact" className="text-asu-gold hover:text-asu-gold/80">
+              Request access here
             </Link>
           </p>
         </div>
@@ -86,9 +86,17 @@ export default function Login() {
             </div>
 
             <div>
-              <label htmlFor="password" className="form-label">
-                Password
-              </label>
+              <div className="flex items-center justify-between">
+                <label htmlFor="password" className="form-label">
+                  Password
+                </label>
+                <Link
+                  to="/forgot-password"
+                  className="text-xs sm:text-sm text-asu-gold hover:text-asu-gold/80 transition-colors"
+                >
+                  Forgot password?
+                </Link>
+              </div>
               <input
                 id="password"
                 name="password"
