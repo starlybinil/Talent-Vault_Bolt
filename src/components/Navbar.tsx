@@ -114,7 +114,7 @@ export default function Navbar() {
           </button>
 
           {/* Center: User actions */}
-          <div className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex absolute md:relative ${user ? 'top-[56px] sm:top-[64px]' : 'top-[112px] sm:top-[120px]'} md:top-0 left-0 right-0 md:items-center flex-col md:flex-row bg-asu-dark md:bg-transparent py-4 md:py-0 space-y-3 md:space-y-0 md:space-x-4 lg:space-x-6 px-4 md:px-0 border-b md:border-b-0 border-asu-maroon/30 z-30 max-h-[calc(100vh-8rem)] overflow-y-auto md:overflow-visible`}>
+          <div className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex absolute md:relative ${user ? 'top-[56px] sm:top-[64px]' : 'top-[56px] sm:top-[60px]'} md:top-0 left-0 right-0 md:items-center flex-col md:flex-row bg-asu-dark md:bg-transparent py-4 md:py-0 space-y-3 md:space-y-0 md:space-x-4 lg:space-x-6 px-4 md:px-0 border-b md:border-b-0 border-asu-maroon/30 z-30 max-h-[calc(100vh-8rem)] overflow-y-auto md:overflow-visible`}>
             {user ? (
               <>
                 <Link
@@ -201,7 +201,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   to="/contact"
-                  className="bg-asu-maroon hover:bg-asu-maroon/90 text-white px-4 py-3 md:py-2 rounded-lg transition-all duration-200 text-center text-base md:text-sm touch-manipulation"
+                  className="bg-asu-maroon hover:bg-asu-maroon/90 text-white px-4 py-2 md:py-2 rounded-lg transition-all duration-200 text-center text-sm md:text-sm touch-manipulation"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Request Access
