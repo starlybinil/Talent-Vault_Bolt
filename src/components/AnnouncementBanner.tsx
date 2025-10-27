@@ -11,7 +11,7 @@ export default function AnnouncementBanner() {
 
   return (
     <div
-      className="bg-asu-gold text-black py-2 sm:py-2 md:py-2.5 px-4 sm:px-6 md:px-8 text-center text-sm sm:text-base md:text-base font-normal fixed top-0 left-0 right-0 z-[70] w-full"
+      className="bg-asu-gold text-black py-2 sm:py-2.5 md:py-3 px-4 sm:px-6 md:px-8 text-center text-sm sm:text-base md:text-base font-normal fixed top-0 left-0 right-0 z-[70] w-full"
       style={{
         /* Ensures banner stays visible during zoom on all devices */
         WebkitTransform: 'translateZ(0)',
