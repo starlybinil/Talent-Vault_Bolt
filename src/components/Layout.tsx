@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Navbar from './Navbar'
 import AnnouncementBanner from './AnnouncementBanner'
+import { useAuth } from '../contexts/AuthContext'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation()
   const navigate = useNavigate()
+  const { user } = useAuth()
 
   // Scroll to top on route change
   useEffect(() => {
@@ -17,17 +19,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     const handleNavigation = (event: MouseEvent) => {
       const target = event.target as HTMLElement
       const link = target.closest('a')
-      
+
       if (link && link.getAttribute('href')?.startsWith('/')) {
         event.preventDefault()
         const to = link.getAttribute('href') || '/'
-        
+
         // Dispatch a custom event that components can listen for
         const navigationEvent = new CustomEvent('navigationAttempt', {
           detail: { to },
           cancelable: true
         })
-        
+
         if (document.dispatchEvent(navigationEvent)) {
           navigate(to)
         }
@@ -42,10 +44,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-asu-darker relative">
       <AnnouncementBanner />
       <Navbar />
-      {/* Main content padding: mobile=128px (announcement 72px + navbar 56px), tablet=144px (80px + 64px), desktop=152px (88px + 64px) */}
-      <main className="pt-[128px] sm:pt-[144px] md:pt-[152px]">
-        {children}
-      </main>
+      {user ? (
+        <main className="pt-[56px] sm:pt-[64px] md:pt-[64px]">
+          {children}
+        </main>
+      ) : (
+        <main className="pt-[112px] sm:pt-[120px] md:pt-[128px]">
+          {children}
+        </main>
+      )}
     </div>
   )
 }
