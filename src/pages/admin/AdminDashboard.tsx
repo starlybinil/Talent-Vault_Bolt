@@ -242,13 +242,25 @@ export default function AdminDashboard() {
     }
   }
 
-  const loadUsers = async () => {
+const loadUsers = async () => {
+  try {
+    console.log('Starting to load users...')
+    setLoadingUsers(true)
+
+    let session
+
     try {
-      console.log('Starting to load users...')
-      setLoadingUsers(true)
-      
-      const { data: { session }, error: sessionError } = await supabase.auth.getSession()
-      console.log('Current session for users:', { session: !!session, error: sessionError })
+      const { data, error } = await supabase.auth.getSession()
+
+      if (error) {
+        throw error
+      }
+
+      session = data.session
+    } catch (err) {
+      console.error('Failed to get session:', err)
+      throw new Error('Authentication failed')
+    }
       
       if (!session) {
         throw new Error('No active session')
